@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 interface MyButtonProps {
   onPress: () => void;
@@ -7,6 +8,7 @@ interface MyButtonProps {
 }
 
 export const MyButton = ({ onPress, text }: MyButtonProps) => {
+  const { styles } = useStyles(stylesheet);
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
@@ -14,13 +16,13 @@ export const MyButton = ({ onPress, text }: MyButtonProps) => {
   );
 };
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet((theme) => ({
   container: {
-    paddingHorizontal: 32,
+    paddingHorizontal: theme.margins.xl,
     paddingVertical: 8,
     backgroundColor: "purple",
     alignSelf: "flex-start",
     borderRadius: 8,
   },
   text: { color: "white", fontSize: 16, fontWeight: "bold" },
-});
+}));

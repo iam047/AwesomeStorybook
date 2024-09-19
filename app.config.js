@@ -1,6 +1,6 @@
 export default ({ config }) => ({
   ...config,
-  name: "HelloWorld",
+  name: "AwesomeStorybook",
   slug: "expo-template-blank-typescript",
   version: "1.0.0",
   orientation: "portrait",
@@ -19,12 +19,14 @@ export default ({ config }) => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
+    bundleIdentifier: 'com.anonymous.AwesomeStorybook',
   },
   android: {
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#FFFFFF",
     },
+    package: 'com.anonymous.AwesomeStorybook',
   },
   web: {
     favicon: "./assets/favicon.png",
